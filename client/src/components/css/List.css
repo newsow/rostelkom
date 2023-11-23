@@ -1,0 +1,26 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.listUsers {
+    background-color: #c9c9c9;
+    max-width: 430px;
+    height: 100vh;
+    overflow-y: scroll;
+    padding: 10px;
+}
+
+.listGroup {
+    margin-top: 10px;
+}
+
+.inputSearch {
+    padding: 10px; 
+    border-radius: 10px;
+}
+
+
+
