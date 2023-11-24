@@ -1,9 +1,12 @@
 import React from 'react'
+import "./css/Message.css"
 
 const Message = () => {
   return (
-    <div>
-      <p className='userMessage'>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</p>
+    <div className="lineMessage">
+      <div className='userMessage'>
+        <a className='textMessage'></a>
+      </div>
     </div>
   )
 }

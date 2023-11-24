@@ -1,5 +1,5 @@
 import React from 'react'
-import './css/Chats.css'
+import './css/ChatUser.css'
 
 const ChatUser = () => {
   return (
@@ -7,9 +7,7 @@ const ChatUser = () => {
       <img className='logoGroup' src='https://apktake.com/storage/967c2ae04b169f07e7fa8fdfd110551e/5f2afee86bb4eApkTake.com.png'></img>
       <div className='textGroup'>
         <a className='nameGroup'>nameGroup</a>
-        {/* <a className='lastMessage'>lastMessage</a> */}
-        
-      </div>
+        </div>
     </div>
   )
 }

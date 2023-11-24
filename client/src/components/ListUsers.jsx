@@ -2,32 +2,24 @@ import React from 'react'
 import './css/List.css'
 import MainChat from './MainChat'
 import ChatUser from './ChatUser'
+import Message from './Message'
+import Chat from './Chat'
 
 const ListUsers = () => {
   return (
-    <div className='listUsers'>
-      <div className="listGroup">
-        <div className='searchGroup'>
-          <form>
-            <input className='inputSearch' placeholder='Search...'/>
-            {/* <button className='submitSearch'></button> */}
-          </form>
+    <>
+      <div className='listUsers'>
+        <div className="listGroup">
+          <div className='searchGroup'>
+            <form>
+            </form>
+            <MainChat/>
+            <ChatUser/>
+          </div>
         </div>
-          <MainChat/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-          <ChatUser/>
-        </div>
-    </div>
+      </div>
+    </>
+    
   )
 }
 
