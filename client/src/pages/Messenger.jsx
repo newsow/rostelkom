@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
-
+import Chat from '../components/Chat'
 const Messenger = () => {
   const navigate = useNavigate()
   useEffect(()=>{
@@ -15,9 +15,7 @@ const Messenger = () => {
   }
   return (
     <div>
-      <button onClick={logout}>
-        Выйти
-      </button>
+      <Chat/>
     </div>
   )
 }

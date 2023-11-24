@@ -1,7 +1,8 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useContext} from 'react'
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import {useNavigate} from 'react-router-dom'
+import { UserContext } from '../context/UserContext';
 
 const Registration = () => {
     const imageUrl = 'https://img.kvmeter.ru/upload/iblock/06e/06e1982866ddbbf5e67d7fb9273274b0.jpg';
@@ -10,12 +11,14 @@ const Registration = () => {
     const [email,setEmail] = useState('')
     const [password,setPassword] = useState('')
     const [secretKey,setSecretKey] = useState('')
+    const {user,updateUser} = useContext(UserContext)
     const navigate = useNavigate()
-    const redirectChat = (status) =>{
-        if(status === 200){
-            return navigate('/chat')
-        }
-    }
+    const redirectChat = (status,id) =>{
+      if(status === 200){
+          updateUser(id)
+          return navigate('/chat')
+      }
+    } 
     const registration = async(e) =>{
         try {
             e.preventDefault()
@@ -29,7 +32,7 @@ const Registration = () => {
             }
             )
             localStorage.setItem('token',response.data.token) 
-            redirectChat(response.status)
+            redirectChat(response.status,response.data.id)
         } catch (error) {
             console.log(error)
         }

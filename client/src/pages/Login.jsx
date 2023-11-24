@@ -1,14 +1,17 @@
-import React,{useState} from 'react'
+import React,{useState,useContext} from 'react'
 import { Link,useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { UserContext } from '../context/UserContext';
 const Login = () => {
 
   const imageUrl = 'https://img.kvmeter.ru/upload/iblock/06e/06e1982866ddbbf5e67d7fb9273274b0.jpg';
   const [email,setEmail] = useState('')
   const [password,setPassword] = useState('')
+  const {user,updateUser} = useContext(UserContext)
   const navigate = useNavigate()
-  const redirectChat = (status) =>{
+  const redirectChat = (status,id) =>{
     if(status === 200){
+        updateUser(id)
         return navigate('/chat')
     }
   } 
@@ -21,7 +24,7 @@ const Login = () => {
           }
           )
           localStorage.setItem('token',response.data.token) 
-          redirectChat(response.status)
+          redirectChat(response.status,response.data.id)
       } catch (error) {
           console.log(error)
       }
