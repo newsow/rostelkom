@@ -8,10 +8,10 @@ const Login = () => {
   const [password,setPassword] = useState('')
   const navigate = useNavigate()
   const redirectChat = (status) =>{
-      if(status === 200){
-          return navigate('/chat')
-      }
-  }
+    if(status === 200){
+        return navigate('/chat')
+    }
+  } 
   const login = async(e) =>{
       try {
           e.preventDefault()
