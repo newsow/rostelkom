@@ -14,6 +14,7 @@
     cursor: pointer;
     transition: 0.1s;
     position: relative;
+    margin-top: 5px;
 }
 
 .mainGroup:hover {
@@ -35,3 +36,4 @@
     border-radius: 100%;
     margin: 6px;
 }
+

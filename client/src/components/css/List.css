@@ -10,7 +10,6 @@
     max-width: 430px;
     height: 100vh;
     overflow-y: scroll;
-    padding-right: 10px;
 }
 
 .listGroup {
@@ -22,5 +21,9 @@
     border-radius: 10px;
 }
 
+.searchGroup {
+    width: 100%;
+    border-radius: 0px;
+}
 
 

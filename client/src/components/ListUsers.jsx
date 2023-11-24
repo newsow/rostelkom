@@ -9,15 +9,24 @@ const ListUsers = () => {
   return (
     <>
       <div className='listUsers'>
-        <div className="listGroup">
-          <div className='searchGroup'>
-            <form>
-            </form>
-            <MainChat/>
-            <ChatUser/>
-          </div>
+        <div className="searchGroup">
+            <label for="Search" className="sr-only"> Search </label>
+
+          <input
+            type="text"
+            id="Search"
+            placeholder="Поиск..."
+            class="w-full rounded-md border-blue-500 py-2.5 pe-10 shadow-sm sm:text-sm p-3 border-none"
+          />
         </div>
+          <div className="listGroup">
+            <div className='searchGroup'>
+              <form>
+              </form>
+            </div>
+          </div>
       </div>
+      
     </>
     
   )
