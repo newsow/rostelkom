@@ -1,0 +1,39 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.mainGroup {
+    background-color: #7900FF;
+    display: flex;
+    width: 100%;
+    border-radius: 3px;
+    margin-bottom: 1px;
+    cursor: pointer;
+    transition: 0.1s;
+    position: relative;
+    margin-top: 5px;
+}
+
+.mainGroup:hover {
+    -webkit-transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    transform: scale(1.02);
+}
+
+.nameMainGroup {
+    font-size: 20px;
+    font-weight: 100;
+    color: #ffffff;
+    position: absolute;
+    bottom: 30px;
+}
+
+.logoMainGroup {
+    height: 50px;
+    border-radius: 100%;
+    margin: 6px;
+}
+

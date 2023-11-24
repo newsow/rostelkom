@@ -1,8 +1,13 @@
 import React from 'react'
+import "./css/Message.css"
 
 const Message = () => {
   return (
-    <div>Message</div>
+    <div className="lineMessage">
+      <div className='userMessage'>
+        <a className='textMessage'></a>
+      </div>
+    </div>
   )
 }
 
