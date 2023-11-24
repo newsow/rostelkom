@@ -21,7 +21,7 @@ class authController{
             const hashPassword = bcrypt.hashSync(password,3)
             const user = await userModel.create({first_name,last_name,email,password:hashPassword,address:user_address})
             const token = generateToken(user._id,user.email,user.address)
-            return res.status(200).json({token})
+            return res.status(200).json({token,id:user._id})
         } catch (error) {
             console.log(error)
             return res.status(400).json({message:error})
@@ -40,7 +40,7 @@ class authController{
                 return res.status(400).json({error:'Неправильный логин или пароль'})
             }
             const token = generateToken(user._id,user.email,user.address)
-            return res.status(200).json({token})
+            return res.status(200).json({token,id:user._id})
         } catch (error) {
             console.log(error)
             return res.status(400).json({message:error})
