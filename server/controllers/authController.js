@@ -2,11 +2,11 @@ const userModel = require('../models/userModel')
 const addressModel = require('../models/addressModel')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
-const secretKey = '1111'
+const secretKeyToken = '1111'
 const uuid = require('uuid')
 
 const generateToken = (id,email,address)=>{
-    return jwt.sign({id,email,address},secretKey,{expiresIn:'3d'})
+    return jwt.sign({id,email,address},secretKeyToken,{expiresIn:'3d'})
     
 }
 class authController{
@@ -57,6 +57,20 @@ class authController{
             return res.status(500)
         }
     }
+
+    async findUser(req,res){
+        try {
+            const token = req.headers.authorization.split(' ')[1]
+            const userToken = jwt.verify(token,secretKeyToken)
+            const user = await userModel.findById(userToken.id)
+            return res.status(200).json(user)
+        } catch (error) {
+            console.log(error)
+            return res.status(500)
+        }
+    }
+
+
     
 
 }

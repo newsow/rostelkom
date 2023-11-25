@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const authRouter = require('./routers/authRouter')
 const cors = require('cors')
 const corsOption = {
-    origin: 'http://localhost:3000',
+    origin: 'http://localhost:3001',
     credentials:true
 }
 
