@@ -57,6 +57,20 @@ class authController{
             return res.status(500)
         }
     }
+
+    async findUser(req,res){
+        try {
+            const token = req.headers.authorization.split(' ')[1]
+            const userToken = jwt.verify(token,secretKeyToken)
+            const user = await userModel.findById(userToken.id)
+            return res.status(200).json(user)
+        } catch (error) {
+            console.log(error)
+            return res.status(500)
+        }
+    }
+
+
     
 
 }
